@@ -1,0 +1,122 @@
+.box{
+    text-align: center;
+    float: left;
+    width: 33%;
+    margin-right: 2px;
+    padding: 0px;
+    background: transparent;
+    box-sizing: border-box;
+}
+.box:last-child{
+    margin-right: 0;
+}
+.box img{
+    width: 100%;
+}
+
+.twoColumnBox{
+    text-align: center;
+    float: left;
+    width: 50%;
+    height: 100%;
+    margin-right: 0px;
+    padding: 0px;
+    background: transparent;
+    color: #fff;
+    box-sizing: border-box;
+}
+.twoColumnBox:last-child{
+    margin-right: 0;
+}
+.twoColumnBox img{
+    width: 100%;
+}
+
+.wrapper {
+  display: table;
+  width: 100%;
+  padding-top: 30px;
+}
+
+.left {
+  width: 0%;
+  background: #cccccc;
+  display: table-cell;
+}
+
+.main {
+  width: 100%;
+  background: gray;
+  display: inline;
+}
+
+input{
+    width: 100%;
+    height: 30px;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0px;
+}
+
+.colour-block {
+  background: grey;
+  width: 90%;
+  padding: 15% 5% 10% 5%;
+  color: #fff;
+}
+.white-block {
+  background:#fff;
+  width: 90%;
+  padding: 15% 5% 10% 5%;
+  color: darkorange;
+}
+h1 {
+  text-align:center;
+  font-size:80px;
+  font-family: 'Prosto One', cursive;
+  font-weight:normal;
+}
+p {
+  font-size:20px;
+  font-family: 'Poiret One', cursive;
+}
+.colour-block div{
+    text-align: center;
+}
+
+.colour-block textarea
+{
+  align-content: center;
+  width: 100%;
+}
+
+/*------------------*/
+/*  SKEW CLOCKWISE  */
+/*------------------*/
+.skew-cc{
+  width:100%;
+  height:100px;
+  position:absolute;
+  left:0px;
+  background: linear-gradient(to right bottom, grey 49%, #fff 50%),    linear-gradient(-50deg, #ffffff 16px, #000 0);
+}
+
+
+/*-------------------------*/
+/* SKEW COUNTER CLOCKWISE  */
+/*-------------------------*/
+.skew-c{
+  width:100%;
+  height:100px;
+  position:absolute;
+  left:0px;
+  background: linear-gradient(to left bottom, #fff 49%, grey 50%);
+}
+
+/*-------------------------*/
+/* IMAGE WHICH FITS THE    */
+/* AREA OF white-block or  */
+/* colour-block            */
+/*-------------------------*/

@@ -1,0 +1,33 @@
+.footer{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    color: grey;
+    text-align: center;
+}
+
+.footerColumn{
+    text-align: center;
+    width: 32%;
+    float: left;
+    padding: 1px;
+    background-color: #fff;
+}
+
+.aFooter
+{
+    width: 100%;
+}
+
+.aFooter:hover{
+    color: darkorange;
+}
+
+.footSeparation{
+  height: 2px;
+  background-color: darkorange;
+  color: darkorange;
+  width: 100%;
+}

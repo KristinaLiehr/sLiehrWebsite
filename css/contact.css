@@ -1,0 +1,25 @@
+.singleColumnBox{
+    text-align: center;
+    float: left;
+    width: 100%;
+    height: 420px;
+    margin-right: 0px;
+    padding: 0px;
+    background: #fff;
+    color: black;
+    box-sizing: border-box;
+}
+
+.singleColumnBox:last-child{
+    margin-right: 0;
+}
+
+.singleColumnBox img{
+    width: 100%;
+}
+
+.style13 {
+	height: 10px;
+	border: 2px;
+	box-shadow: 0 10px 10px -10px darkorange inset;
+}
