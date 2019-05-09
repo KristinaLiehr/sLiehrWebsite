@@ -11,6 +11,10 @@
     function goToGallery() {
         window.open("gallery.html", "_self");
     }
+    function goToHome()
+    {
+        window.open("index.html", "_self");
+    }
     function goToImprint() {
         window.open("imprint.html", "_self");
     }
@@ -46,7 +50,7 @@
 
     <header>
         <div class="navbar">
-            <img src="Images/Logo/s. liehr LOGO.PNG" class="logo" />
+            <img src="Images/Logo/s. liehr LOGO.PNG" class="logo" onclick="goToHome();"/>
             <a href="contact.html">Kontakt</a>
             <div class="dropdown">
                 <button class="dropbtn" onclick="goToGallery();">Galerie

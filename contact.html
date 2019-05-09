@@ -17,6 +17,10 @@
     {
         window.open("https://www.google.com/maps/place/von-Humboldt-Stra%C3%9Fe+128,+52511+Geilenkirchen/@50.9799335,6.0963907,17z/data=!3m1!4b1!4m5!3m4!1s0x47c0a51dea66dbf9:0xdfac26a0baa83d5!8m2!3d50.9799301!4d6.0985794", "_blank");
     }
+    function goToHome()
+    {
+        window.open("index.html", "_self");
+    }
     function goToImprint()
     {
         window.open("imprint.html", "_self");
@@ -92,7 +96,7 @@
 
     <header>
         <div class="navbar">
-            <img src="Images/Logo/s. liehr LOGO.PNG" class="logo" />
+            <img src="Images/Logo/s. liehr LOGO.PNG" class="logo" onclick="goToHome();"/>
             <a href="contact.html">Kontakt</a>
             <div class="dropdown">
                 <button class="dropbtn" onclick="goToGallery();">Galerie
