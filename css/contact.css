@@ -30,6 +30,12 @@ input
     font-family: 'Poiret One', cursive;
 }
 
+textarea
+{
+    font-size:20px;
+    font-family: 'Poiret One', cursive;
+}
+
 /* The container
 .container {
   float: left;
