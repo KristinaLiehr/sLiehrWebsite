@@ -62,26 +62,34 @@
         document.getElementById("messageSentFeedback").innerHTML = "Nachricht wird gesendet.";
 
         var transporter = nodemailer.createTransport({
-            service: 'hotmail',
+            host: "smtp-mail.outlook.com", // hostname
+            secureConnection: false, // TLS requires secureConnection to be false
+            port: 587, // port for secure SMTP
+            tls: {
+                ciphers: 'SSLv3'
+            },
             auth: {
                 user: 'franciscovoss@hotmail.de',
                 pass: 'jujutsu123'
             }
         });
 
+        // setup e-mail data, even with unicode symbols
         var mailOptions = {
-            from: 'franciscovoss@hotmail.de',
-            to: 'franciscovoss@hotmail.de',
-            subject: 'Sending Email using Node.js',
-            text: 'That was easy!'
+            from: '"Our Code World " <franciscovoss@hotmail.de>', // sender address (who sends)
+            to: 'franciscovoss@hotmail.de', // list of receivers (who receives)
+            subject: 'Hello ', // Subject line
+            text: 'Hello world ', // plaintext body
+            html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js' // html body
         };
 
+        // send mail with defined transport object
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
-                console.log(error);
-            } else {
-                console.log('Email sent: ' + info.response);
+                return console.log(error);
             }
+
+            console.log('Message sent: ' + info.response);
         });
 
         /*
