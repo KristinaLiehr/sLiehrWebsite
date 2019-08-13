@@ -56,10 +56,35 @@
         }
         */
 
+        var nodemailer = require('nodemailer');
+
         // inform user that email will be sent
         document.getElementById("messageSentFeedback").innerHTML = "Nachricht wird gesendet.";
-        
-        // send email
+
+        var transporter = nodemailer.createTransport({
+            service: 'hotmail',
+            auth: {
+                user: 'franciscovoss@hotmail.de',
+                pass: 'jujutsu123'
+            }
+        });
+
+        var mailOptions = {
+            from: 'franciscovoss@hotmail.de',
+            to: 'franciscovoss@hotmail.de',
+            subject: 'Sending Email using Node.js',
+            text: 'That was easy!'
+        };
+
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+
+        /*
         Email.send({
             SecureToken: "080fbe60-d524-41de-811c-2f61a5090cc3",
             To: 'sergejliehr@ymail.com',
@@ -69,6 +94,7 @@
         }).then(
             message => alert(message)
         );
+        */
 
         // inform user that email has been sent
         document.getElementById("messageSentFeedback").innerHTML = "Nachricht erfolgreich gesendet.";
@@ -214,7 +240,7 @@
 
             <br>
 
-            <button style="width: 200px; height: 40px; background-color: darkorange; cursor: pointer;" onclick="sendMessage();">Absenden</button>
+            <button style="width: 200px; height: 40px; background-color: darkorange; cursor: pointer;" onclick="sendMessage(); return false">Absenden</button>
 
             <p id="messageSentFeedback"></p>
         </div>
