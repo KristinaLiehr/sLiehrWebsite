@@ -56,38 +56,9 @@
         }
         */
 
-        var nodemailer = require('nodemailer');
-
         // inform user that email will be sent
         document.getElementById("messageSentFeedback").innerHTML = "Nachricht wird gesendet.";
 
-        var transport = nodemailer.createTransport("SMTP", {
-            service: "hotmail",
-            auth: {
-                user: "franciscovoss@hotmail.de",
-                pass: "jujutsu123"
-            }
-        });
-
-        // setup e-mail data, even with unicode symbols
-        var mailOptions = {
-            from: '"Our Code World " <franciscovoss@hotmail.de>', // sender address (who sends)
-            to: 'franciscovoss@hotmail.de', // list of receivers (who receives)
-            subject: 'Hello ', // Subject line
-            text: 'Hello world ', // plaintext body
-            html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js' // html body
-        };
-
-        // send mail with defined transport object
-        transporter.sendMail(mailOptions, function (error, info) {
-            if (error) {
-                return console.log(error);
-            }
-
-            console.log('Message sent: ' + info.response);
-        });
-
-        /*
         Email.send({
             SecureToken: "080fbe60-d524-41de-811c-2f61a5090cc3",
             To: 'sergejliehr@ymail.com',
@@ -97,7 +68,6 @@
         }).then(
             message => alert(message)
         );
-        */
 
         // inform user that email has been sent
         document.getElementById("messageSentFeedback").innerHTML = "Nachricht erfolgreich gesendet.";
@@ -243,7 +213,7 @@
 
             <br>
 
-            <button style="width: 200px; height: 40px; background-color: darkorange; cursor: pointer;" onclick="sendMessage(); return false">Absenden</button>
+            <button style="width: 200px; height: 40px; background-color: darkorange; cursor: pointer;" onclick="sendMessage();">Absenden</button>
 
             <p id="messageSentFeedback"></p>
         </div>
