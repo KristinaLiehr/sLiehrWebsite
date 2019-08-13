@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 
 <script>
+    function checkUncheckRadioButton()
+    {
+        if(this.checked)
+        {
+            this.checked = false;
+        }
+        else
+        {
+            this.checked = false;
+        }
+    }
     function goToAboutUs()
     {
         window.open("aboutus.html", "_self");
@@ -79,6 +90,7 @@
     <link rel="stylesheet" type="text/css" href="css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="css/contact.css">
     <link rel="stylesheet" type="text/css" href="css/imageHoverWithLink.css">
+    <link rel="stylesheet" type="text/css" href="css/checkboxstyle.css">
     <link rel="stylesheet" type="text/css" href="css/footstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Caveat|Days+One|Homemade+Apple|Just+Another+Hand|Kalam|Maven+Pro|Molengo|Poiret+One|Prosto+One|Shadows+Into+Light"
         rel="stylesheet">
@@ -187,6 +199,12 @@
                 <span class="checkmark"></span>
             </label>
             -->
+
+            <label class="container">Bitte um Rückruf
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+
             <div class="wrapper">
                 <div class="main">
                     <textarea id="messageTextarea" name="" cols="" rows="8"
