@@ -230,40 +230,49 @@
     <div class="colour-block">
         <h1 style="color:white;">Kontaktformular</h1>
         <div style="width: 50%; padding-left: 25%;">
-            <!--<label>Name:</label>-->
-            <input type="text" id="bname" placeholder="Name" />
-            <!--<label>Firma:</label>-->
-            <input type="text" id="bcompany" placeholder="Firma" />
-            <!--<label>E-Mail</label>-->
-            <input type="text" id="bmail" placeholder="E-Mail" />
-            <!--<label>Telefonnummer:</label>-->
-            <input type="text" id="bphone" placeholder="Telefonnummer" />
+            <form action="POST" data-netlify="true">
+                <div class="fields">
+                    <div class="field half">
+                        <input type="text" name="name" id="name" placeholder="Name">
+                    </div>
+                    <div class="field half">
+                        <input type="text" name="company" id="company" placeholder="Firma">
+                    </div>
+                    <div class="field half">
+                        <input type="text" name="email" id="email" placeholder="E-Mail">
+                    </div>
+                    <div class="field half">
+                        <input type="text" name="phone" id="phone" placeholder="Telefonnummer">
+                    </div>
             
-            <p></p>
-            <!--
-            <label class="container">Bitte um Rückruf
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-            </label>
-            -->
+                    <p></p>
+                    <label class="container">Bitte um Rückruf
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+            
+                    <div class="wrapper">
+                        <div class="main">
+                            <textarea type="text" name="message" id="message" placeholder="Hinterlassen Sie Ihre Nachricht hier."
+                                rows="7"></textarea>
+                        </div>
+                    </div>
 
-            <label class="container">Bitte um Rückruf
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-            </label>
-
-            <div class="wrapper">
-                <div class="main">
-                    <textarea id="messageTextarea" name="" cols="" rows="8"
-                        placeholder="Hinterlassen Sie Ihre Nachricht hier."></textarea>
+                    <p></p>
+                    <div class="field">
+                        <input type="file" name="myfile" id="myfile" placeholder="Upload File" rows="7">
+                    </div>
+                    <div class="field">
+                        <div data-netlify-recaptcha="true"></div>
+                    </div>
                 </div>
-            </div>
-
-            <br>
-
-            <button style="width: 200px; height: 40px; background-color: darkorange; cursor: pointer;" onclick="sendEmail();">Absenden</button>
-
-            <p id="messageSentFeedback"></p>
+                <ul class="actions">
+                    <li>
+                        <input type="submit" value="Absenden" class="button primary"
+                            style="width: 200px; height: 40px; background-color: darkorange; cursor: pointer;">
+                    </li>
+                </ul>
+            </form>
         </div>
     </div>
     <div class="skew-cc"></div>
@@ -272,33 +281,6 @@
     </div>
 
     <hr class="headSeparation">
-
-    <form action="POST" data-netlify="true">
-        <div class="fields">
-            <div class="field half">
-                <input type="text" name="name" id="name" placeholder="Name">
-            </div>
-            <div class="field half">
-                <input type="text" name="email" id="email" placeholder="E-Mail">
-            </div>
-            <div class="field">
-                <textarea type="text" name="message" id="message" placeholder="Message" rows="7"></textarea>
-            </div>
-            <div class="field">
-                <input type="file" name="myfile" id="myfile" placeholder="Upload File" rows="7">
-            </div>
-            <div class="field">
-                <div data-netlify-recaptcha="true">
-
-                </div>
-            </div>
-        </div>
-        <ul class="actions">
-            <li>
-                <input type="submit" value="Send Message" class="button primary">
-            </li>
-        </ul>
-    </form>
 
 </body>
 
