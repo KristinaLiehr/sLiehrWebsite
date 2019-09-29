@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="send-email.js" type="text/javascript"></script>
 
