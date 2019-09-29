@@ -97,8 +97,14 @@
 
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
+                // inform user that email has not been sent due to an error
+                document.getElementById("messageSentFeedback").innerHTML = "Nachricht senden fehlgeschlagen.";
+
                 console.log(error);
             } else {
+                // inform user that email has been sent
+                document.getElementById("messageSentFeedback").innerHTML = "Nachricht wurde gesendet.";
+
                 console.log('Email sent: ' + info.response);
             }
         });
