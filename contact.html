@@ -273,7 +273,7 @@
 
     <hr class="headSeparation">
 
-    <form action="POST">
+    <form action="POST" data-netlify="true">
         <div class="fields">
             <div class="field half">
                 <input type="text" name="name" id="name" placeholder="Name">
@@ -283,6 +283,14 @@
             </div>
             <div class="field">
                 <textarea type="text" name="message" id="message" placeholder="Message" rows="7"></textarea>
+            </div>
+            <div class="field">
+                <input type="file" name="myfile" id="myfile" placeholder="Upload File" rows="7">
+            </div>
+            <div class="field">
+                <div data-netlify-recaptcha="true">
+
+                </div>
             </div>
         </div>
         <ul class="actions">
