@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 
+<script src="https://smtpjs.com/v3/smtp.js">
+
+</script>
+
 <script>
     function checkUncheckRadioButton()
     {
@@ -59,6 +63,7 @@
         // inform user that email will be sent
         document.getElementById("messageSentFeedback").innerHTML = "Nachricht wird gesendet.";
 
+        /*
         Email.send({
             SecureToken: "080fbe60-d524-41de-811c-2f61a5090cc3",
             To: 'sergejliehr@ymail.com',
@@ -71,11 +76,33 @@
 
         // inform user that email has been sent
         document.getElementById("messageSentFeedback").innerHTML = "Nachricht erfolgreich gesendet.";
+        */
+
+        var nodemailer = require('nodemailer');
+
+        var transporter = nodemailer.createTransport({
+            service: 'smtp.mail.yahoo.com',
+            auth: {
+                user: 'sergejliehr@ymail.com',
+                pass: 'Jerry205'
+            }
+        });
+
+        var mailOptions = {
+            from: 'sergejliehr@ymail.com',
+            to: 'sergejliehr@ymail.com',
+            subject: 'Sending Email using Node.js',
+            text: 'That was easy!'
+        };
+
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
     }
-</script>
-
-<script src="https://smtpjs.com/v3/smtp.js">
-
 </script>
 
 <html class="no-js" lang="">
