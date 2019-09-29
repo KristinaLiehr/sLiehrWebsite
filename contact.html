@@ -41,89 +41,6 @@
     {
         window.open("services.html", "_self");
     }
-
-    function sendMessage()
-    {
-        /*
-        if (document.getElementById("bname").innerText == "") {
-            document.getElementById("messageSentFeedback").innerHTML = "Bitte nennen Sie uns für die Bearbeitung noch Ihren Namen.";
-        }
-        else if (document.getElementById("bmail").innerText == "" && document.getElementById("bphone").innerText == "") {
-            document.getElementById("messageSentFeedback").innerHTML = "Bitte geben Sie uns eine Möglichkeit mit Ihnen in Kontakt zu treten (E-Mail oder Telefonnummer)";
-        }
-        else {
-           document.getElementById("messageSentFeedback").innerHTML = "Wir haben Ihre Nachricht erhalten und melden uns bei Ihnen!";
-           document.getElementById("messageTextarea").innerText = "";
-        }
-        */
-
-        // inform user that email will be sent
-        document.getElementById("messageSentFeedback").innerHTML = "Nachricht wird gesendet.";
-
-        /*
-        Email.send({
-            SecureToken: "080fbe60-d524-41de-811c-2f61a5090cc3",
-            To: 'sergejliehr@ymail.com',
-            From: "sergejliehr@ymail.com",
-            Subject: "Kontaktanfrage via Website",
-            Body: "And this is the body"
-        }).then(
-            message => alert(message)
-        );
-
-        // inform user that email has been sent
-        document.getElementById("messageSentFeedback").innerHTML = "Nachricht erfolgreich gesendet.";
-        */
-
-        /*
-        var nodemailer = require('nodemailer');
-
-        var transporter = nodemailer.createTransport({
-            service: 'smtp.mail.yahoo.com',
-            auth: {
-                user: 'sergejliehr@ymail.com',
-                pass: 'Jerry205'
-            }
-        });
-
-        var mailOptions = {
-            from: 'sergejliehr@ymail.com',
-            to: 'sergejliehr@ymail.com',
-            subject: 'Sending Email using Node.js',
-            text: 'That was easy!'
-        };
-
-        transporter.sendMail(mailOptions, function (error, info) {
-            if (error) {
-                // inform user that email has not been sent due to an error
-                document.getElementById("messageSentFeedback").innerHTML = "Nachricht senden fehlgeschlagen.";
-
-                console.log(error);
-            } else {
-                // inform user that email has been sent
-                document.getElementById("messageSentFeedback").innerHTML = "Nachricht wurde gesendet.";
-
-                console.log('Email sent: ' + info.response);
-            }
-        });
-        */
-
-        const SparkPost = require('sparkpost');
-        const client = new SparkPost(process.env.SPARKPOST);
-
-        exports.handler = function (event, context, callback) {
-            client.transmissions
-                .send({
-                    content: {
-                        from: 'k_liehr92@yahoo.de',
-                        subject: 'Hello, World!',
-                        html:
-                            "<html><body><p>My cool email.</p></body></html>"
-                    },
-                    recipients: [{ address: 'k_liehr92@yahoo.de' }]
-                });
-        }
-    }
 </script>
 
 <html class="no-js" lang="">
@@ -259,13 +176,17 @@
                     </div>
 
                     <p></p>
-                    <div class="field">
-                        <input type="file" name="myfile" id="myfile" placeholder="Upload File" rows="7">
+                    <div class="wrapper">
+                        <div class="main">
+                            <input style="display:inline-block; width: 60%" type="file" name="myfile" id="myfile" placeholder="Upload File" rows="7">
+                        </div>
                     </div>
 
                     <p></p>
-                    <div class="field">
-                        <div data-netlify-recaptcha="true"></div>
+                    <div class="wrapper">
+                        <div class="main">
+                            <div style="display:inline-block; width: 60%" data-netlify-recaptcha="true"></div>
+                        </div>
                     </div>
                 </div>
                 <ul class="actions">
